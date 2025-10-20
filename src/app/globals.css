@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens via CSS variables (RGB values) */
+:root {
+  --background: 255 255 255;
+  --foreground: 15 23 42; /* slate-900 */
+
+  --muted: 241 245 249; /* slate-100 */
+  --muted-foreground: 100 116 139; /* slate-500 */
+
+  --card: 255 255 255;
+  --card-foreground: 15 23 42;
+
+  --border: 226 232 240; /* slate-200 */
+  --input: 226 232 240;
+  --ring: 99 102 241; /* indigo-500 */
+
+  --primary: 99 102 241; /* indigo-500 */
+  --primary-foreground: 255 255 255;
+
+  --secondary: 2 132 199; /* sky-600 */
+  --secondary-foreground: 255 255 255;
+
+  --accent: 16 185 129; /* emerald-500 */
+  --accent-foreground: 255 255 255;
+
+  --destructive: 239 68 68; /* red-500 */
+  --destructive-foreground: 255 255 255;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 2 6 23; /* slate-950 */
+  --foreground: 226 232 240; /* slate-200 */
+
+  --muted: 15 23 42; /* slate-900 */
+  --muted-foreground: 148 163 184; /* slate-400 */
+
+  --card: 2 6 23;
+  --card-foreground: 226 232 240;
+
+  --border: 30 41 59; /* slate-800 */
+  --input: 30 41 59;
+  --ring: 129 140 248; /* indigo-400 */
+
+  --primary: 129 140 248; /* indigo-400 */
+  --primary-foreground: 17 24 39; /* gray-900 */
+
+  --secondary: 56 189 248; /* sky-400 */
+  --secondary-foreground: 17 24 39; /* gray-900 */
+
+  --accent: 52 211 153; /* emerald-400 */
+  --accent-foreground: 17 24 39; /* gray-900 */
+
+  --destructive: 248 113 113; /* red-400 */
+  --destructive-foreground: 24 24 27; /* zinc-900 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .heading-1 { @apply text-4xl font-bold tracking-tight md:text-5xl; }
+  .heading-2 { @apply text-2xl font-semibold tracking-tight md:text-3xl; }
+  .muted { @apply text-muted-foreground; }
+}
+
