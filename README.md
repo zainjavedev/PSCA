@@ -1,6 +1,6 @@
 # PSCA Starter – Next.js + Tailwind
 
-Reusable starter for new projects: Next.js (App Router) + Tailwind CSS, light/dark themes via CSS variables, a few common components, and a simple style guide.
+Reusable starter for new projects: Next.js (App Router) + Tailwind CSS, design tokens via CSS variables, a few common components, and a simple style guide.
 
 ## Quickstart
 
@@ -15,22 +15,21 @@ pnpm dev      # starts dev server on http://localhost:3000
 ## What’s Included
 
 - Next.js 14 App Router + TypeScript
-- Tailwind CSS with design tokens and dark mode (class)
-- Theme provider without extra deps (localStorage + prefers-color-scheme)
+- Tailwind CSS with design tokens (CSS variables)
 - Common components: Button, Card, Badge, Navbar, Footer, Container
 - Style guide page with colors, typography, and components
 
 ## Structure
 
 - `src/app` – App Router pages, layout, and global styles
-- `src/components` – UI, layout, and theme components
+- `src/components` – UI and layout components
 - `src/lib` – small utilities
 - `tailwind.config.js` – tokens mapped to CSS variables
-- `src/app/globals.css` – light/dark variables and base resets
+- `src/app/globals.css` – design tokens and base styles
 
 ## Theming
 
-Colors and radii are defined as CSS variables in `src/app/globals.css`. Tailwind maps these tokens via `tailwind.config.js` so you can use classes like `bg-primary`, `text-foreground`, `border`, etc. The `ThemeProvider` toggles the `dark` class on `<html>` and persists preference in localStorage.
+Colors and radii are defined as CSS variables in `src/app/globals.css`. Tailwind maps these tokens via `tailwind.config.js` so you can use classes like `bg-primary`, `text-foreground`, `border`, etc.
 
 ## Customize
 
@@ -49,4 +48,3 @@ Colors and radii are defined as CSS variables in `src/app/globals.css`. Tailwind
 ---
 
 Enjoy building! ✨
-

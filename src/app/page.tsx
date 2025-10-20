@@ -35,8 +35,8 @@ export default function HomePage() {
 
 const features = [
   {
-    title: "Tailwind + Themes",
-    desc: "CSS variables + Tailwind with dark mode via a tiny ThemeProvider.",
+    title: "Tailwind + Tokens",
+    desc: "CSS variables wired to Tailwind for simple, consistent theming.",
   },
   {
     title: "Common Components",
@@ -59,4 +59,3 @@ const features = [
     desc: "Linting, formatting, and sensible Next.js defaults.",
   },
 ];
-

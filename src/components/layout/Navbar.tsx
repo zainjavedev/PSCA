@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Container } from "./Container";
-import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { usePathname } from "next/navigation";
 
 const links = [
@@ -35,11 +34,8 @@ export function Navbar() {
             ))}
           </nav>
         </div>
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-        </div>
+        {/* Right side intentionally left empty for future actions */}
       </Container>
     </header>
   );
 }
-
