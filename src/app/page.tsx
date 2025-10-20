@@ -62,9 +62,9 @@ function HeroThumb({ src, alt }: { src: StaticImageData | string; alt: string })
   return (
     <div className="overflow-hidden rounded-3xl border bg-card">
       {typeof src === "string" ? (
-        <img src={src} alt={alt} className="aspect-[4/3] w-full object-cover object-center" />
+        <img src={src} alt={alt} className="aspect-[3/2] w-full object-cover object-center" />
       ) : (
-        <Image src={src} alt={alt} className="aspect-[4/3] w-full object-cover object-center" />
+        <Image src={src} alt={alt} className="aspect-[3/2] w-full object-cover object-center" />
       )}
     </div>
   );
