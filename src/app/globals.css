@@ -15,13 +15,14 @@
 
   --border: 226 232 240; /* slate-200 */
   --input: 226 232 240;
-  --ring: 99 102 241; /* indigo-500 */
+  --ring: 66 198 82; /* primary */
 
-  --primary: 99 102 241; /* indigo-500 */
+  /* Brand core tokens */
+  --primary: 66 198 82; /* #42C652 */
   --primary-foreground: 255 255 255;
 
-  --secondary: 2 132 199; /* sky-600 */
-  --secondary-foreground: 255 255 255;
+  --secondary: 216 230 98; /* #D8E662 (secondary-300) */
+  --secondary-foreground: 17 24 39; /* gray-900 */
 
   --accent: 16 185 129; /* emerald-500 */
   --accent-foreground: 255 255 255;
@@ -30,6 +31,24 @@
   --destructive-foreground: 255 255 255;
 
   --radius: 0.5rem;
+
+  /* Brand palette */
+  --primary-100: 66 198 82; /* #42C652 */
+
+  --secondary-100: 228 250 218; /* #E4FADA */
+  --secondary-200: 219 244 169; /* #DBF4A9 */
+  --secondary-300: 216 230 98;  /* #D8E662 */
+  --secondary-400: 209 229 221; /* #D1E5DD */
+
+  /* Neutral palette */
+  --neutral-100: 255 255 255; /* #FFFFFF */
+  --neutral-200: 237 246 233; /* #EDF6E9 */
+  --neutral-300: 187 200 195; /* #BBC8C3 */
+  --neutral-400: 106 132 122; /* #6A847A */
+  --neutral-500: 46 131 97;   /* #2E8361 */
+  --neutral-600: 36 82 64;    /* #245240 */
+  --neutral-700: 53 70 63;    /* #35463F */
+  --neutral-800: 36 60 56;    /* #243C38 */
 }
 
 @layer base {
