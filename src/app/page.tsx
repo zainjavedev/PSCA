@@ -20,11 +20,11 @@ export default function HomePage() {
               Keep your community active, healthy, and united
             </h1>
             <div className="flex flex-wrap items-center gap-3">
-              <Link href="#members">
+              <a href="#members">
                 <Button className="h-12 rounded-full px-8 text-base md:h-14 md:px-12 md:text-lg">
                   Join the club
                 </Button>
-              </Link>
+              </a>
             </div>
 
             {/* Thumbnails row */}
