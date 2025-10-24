@@ -7,10 +7,10 @@ import { goli } from "@/app/fonts";
 
 export const metadata: Metadata = {
   title: {
-    default: "PSCA Starter",
-    template: "%s | PSCA Starter",
+    default: "PSCA",
+    template: "%s | PSCA",
   },
-  description: "A reusable Next.js + Tailwind starter with theming and demo components.",
+  description: "PSCA — Community sports, events, and programs for all ages.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
