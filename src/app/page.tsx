@@ -2,12 +2,12 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
-import heroMain from "@/assets/hero-main.jpg";
-import thumb1 from "@/assets/hero-thumb-1.jpg";
-import thumb2 from "@/assets/hero-thumb-2.jpg";
-import sportFootball from "@/assets/sports-football.png";
-import sportTennis from "@/assets/sports-tennis.png";
-import photoSoccer from "@/assets/photos/soccer.jpg";
+import heroMain from "@/assets/photos/usbofphotography-12732254.jpg";
+import heroThumbCommunity from "@/assets/photos/pixabay-358042.jpg";
+import heroThumbFestival from "@/assets/photos/vladvictoria-10544231.jpg";
+import cricketPhoto from "@/assets/photos/pixabay-163526.jpg";
+import futsalPhoto from "@/assets/photos/soccer.jpg";
+import { FacilitiesSection } from "@/components/sections/FacilitiesSection";
 
 export default function HomePage() {
   return (
@@ -22,52 +22,57 @@ export default function HomePage() {
 
         <Container className="grid items-start gap-6 md:gap-8 py-10 sm:py-14 lg:grid-cols-[1.2fr,0.8fr] lg:items-end lg:py-20">
           {/* Left content */}
-          <div className="order-2 space-y-5 lg:order-1">
-            {/* Reviews row */}
-            <div className="flex items-center gap-3 text-sm text-neutral-600">
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-neutral-600">G</span>
+          <div className="order-2 space-y-6 lg:order-1">
+            {/* Club credibility row */}
+            <div className="flex flex-wrap items-center gap-3 text-sm text-neutral-600">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-neutral-200 font-semibold text-neutral-700">PSC</span>
               <Stars />
-              <span className="text-muted-foreground">+1,200 reviews</span>
+              <span className="text-muted-foreground">Serving Pakistani Australians since 1996</span>
             </div>
 
             <h1 className="text-display-9 md:text-display-10 text-neutral-800">
-              Keep your kids active, healthy, and having a blast
+              Uniting Pakistan&apos;s sporting spirit across Australia
             </h1>
+            <p className="max-w-2xl text-para-md text-muted-foreground">
+              Pakistan Sports Club Australia brings together players, supporters, and families for year-round cricket,
+              futsal, and community celebrations from Sydney to Perth.
+            </p>
             <div className="flex flex-wrap items-center gap-3">
-              <a href="/contact">
-                <Button className="h-12 rounded-full px-8 text-base md:h-14 md:px-10 md:text-lg">Join the club</Button>
+              <a href="/members">
+                <Button className="h-12 rounded-full px-8 text-base md:h-14 md:px-10 md:text-lg">Become a member</Button>
               </a>
-              <a href="tel:+11234567890">
+              <a href="mailto:info@psca.org.au">
                 <Button variant="outline" className="h-12 rounded-full px-6 text-base md:h-14 md:px-8 md:text-lg">
-                  (123) 456 - 7890
+                  info@psca.org.au
                 </Button>
               </a>
             </div>
 
             {/* Thumbnails row */}
             <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4">
-              <HeroThumb src={thumb1} alt="Community football" />
-              <HeroThumb src={thumb2} alt="Junior basketball" />
+              <HeroThumb src={heroThumbCommunity} alt="PSCA community cricket match" />
+              <HeroThumb src={heroThumbFestival} alt="Pakistan Independence sports festival" />
             </div>
           </div>
 
           {/* Right image */}
           <div className="order-1 lg:order-2 lg:justify-self-end">
             <div className="relative mx-auto w-full max-w-[520px] overflow-hidden rounded-[28px] border bg-card shadow-sm md:max-w-[560px] lg:mr-0">
-              <Image src={heroMain} alt="Athletes enjoying sport" className="h-full w-full object-cover" priority />
+              <Image src={heroMain} alt="Pakistan Sports Club Australia players warming up" className="h-full w-full object-cover" priority />
             </div>
           </div>
         </Container>
       </section>
 
-      {/* Sports feature cards */}
-      <section id="sports" className="py-12 sm:py-16">
+      {/* Programs feature cards */}
+      <section id="programs" className="py-12 sm:py-16">
         <Container>
           <div className="text-center">
-            <div className="text-xs uppercase tracking-[0.35em] text-primary">Sports</div>
-            <h2 className="mt-3 font-sans text-4xl font-medium text-primary md:text-5xl">Explore our sports</h2>
+            <div className="text-xs uppercase tracking-[0.35em] text-primary">Programs</div>
+            <h2 className="mt-3 font-sans text-4xl font-medium text-primary md:text-5xl">Signature PSCA programs</h2>
             <p className="mx-auto mt-3 max-w-2xl text-para-md text-muted-foreground">
-              Fermentum hendrerit donec libero lacinia non et in adipiscing gravida eu risus praesent sit orci in sed id nibh facilisis.
+              From premier cricket leagues to indoor futsal nights, Pakistan Sports Club Australia delivers organised
+              competitions and events for every generation of our community.
             </p>
           </div>
 
@@ -77,8 +82,8 @@ export default function HomePage() {
                 <div className="relative overflow-hidden rounded-[28px]">
                   <Image src={card.image} alt={card.title} className="aspect-[4/5] w-full object-cover" />
                   <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-                    <Badge icon={<CalendarIcon />}>{card.days}</Badge>
-                    <Badge icon={<ClockIcon />}>{card.time}</Badge>
+                    <Badge icon={<CalendarIcon />}>{card.season}</Badge>
+                    <Badge icon={<LocationIcon />}>{card.location}</Badge>
                   </div>
                 </div>
                 <h3 className="text-2xl font-medium text-neutral-700">{card.title}</h3>
@@ -89,14 +94,16 @@ export default function HomePage() {
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href="/contact">
-              <Button className="rounded-full px-8">Enroll your kids</Button>
+              <Button className="rounded-full px-8">Register your team</Button>
             </a>
-            <Link href="/sports">
-              <Button variant="outline" className="rounded-full px-8">Browse all sports</Button>
+            <Link href="/events">
+              <Button variant="outline" className="rounded-full px-8">View event calendar</Button>
             </Link>
           </div>
         </Container>
       </section>
+
+      <FacilitiesSection />
 
       {/* Simple features section kept for scaffolding usefulness */}
       <Container className="pb-16">
@@ -144,25 +151,25 @@ function Stars() {
 
 const sportsCards = [
   {
-    title: "Soccer",
-    desc: "Energetic sessions focused on teamwork, dribbling skills and confidence for young players.",
-    days: "Tue and Thu",
-    time: "12:00AM – 2:00 PM",
-    image: photoSoccer,
+    title: "PSCA Premier Cricket League",
+    desc: "Flagship one-day and T20 competitions bringing together Pakistani clubs from every major Australian city.",
+    season: "September – March",
+    location: "Sydney & Melbourne",
+    image: cricketPhoto,
   },
   {
-    title: "Football",
-    desc: "Friendly, fast games that keep kids active while building coordination and friendships.",
-    days: "Tue to Sun",
-    time: "4:00PM – 7:00 PM",
-    image: sportFootball,
+    title: "Indoor Futsal Nights",
+    desc: "Fast-paced futsal matchups every Friday with mixed squads, music, and post-game chai.",
+    season: "Year-round",
+    location: "Auburn Indoor Centre",
+    image: futsalPhoto,
   },
   {
-    title: "Tennis",
-    desc: "Coach-led rallies and drills that nurture agility, focus and love for the game.",
-    days: "Mon to Wed",
-    time: "4:00PM – 7:00 PM",
-    image: sportTennis,
+    title: "Community Sports Festival",
+    desc: "Annual family weekend featuring friendly matches, cultural stalls, and performances celebrating Pakistan.",
+    season: "August",
+    location: "Rotating national venues",
+    image: heroThumbCommunity,
   },
 ];
 
@@ -186,26 +193,26 @@ function CalendarIcon() {
   );
 }
 
-function ClockIcon() {
+function LocationIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-      <circle cx="12" cy="12" r="9" />
-      <polyline points="12 7 12 12 15 15" />
+      <path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11z" />
+      <circle cx="12" cy="10" r="2.5" />
     </svg>
   );
 }
 
 const features = [
   {
-    title: "All-ages programs",
-    desc: "Cricket, football, badminton, volleyball, and more community sports.",
+    title: "Nationwide fixtures",
+    desc: "Coordinated leagues and friendlies spanning New South Wales, Victoria, and Western Australia.",
   },
   {
-    title: "Events & leagues",
-    desc: "Tournaments, training, and social fixtures across the calendar.",
+    title: "Accredited coaching",
+    desc: "Experienced coaches supporting juniors, seniors, and masters squads with tailored programs.",
   },
   {
-    title: "Community first",
-    desc: "Celebrate heritage and build lasting friendships through sport.",
+    title: "Cultural connection",
+    desc: "Events honour Pakistani heritage with traditional food, music, and family activities.",
   },
 ];
