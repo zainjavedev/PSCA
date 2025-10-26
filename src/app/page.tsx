@@ -8,6 +8,11 @@ import heroThumbFestival from "@/assets/photos/vladvictoria-10544231.jpg";
 import cricketPhoto from "@/assets/photos/pixabay-163526.jpg";
 import futsalPhoto from "@/assets/photos/soccer.jpg";
 import { FacilitiesSection } from "@/components/sections/FacilitiesSection";
+import { TrainersSection } from "@/components/sections/TrainersSection";
+import { PerksSection } from "@/components/sections/PerksSection";
+import { ArticlesSection } from "@/components/sections/ArticlesSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { FaqSection } from "@/components/sections/FaqSection";
 
 export default function HomePage() {
   return (
@@ -104,18 +109,11 @@ export default function HomePage() {
       </section>
 
       <FacilitiesSection />
-
-      {/* Simple features section kept for scaffolding usefulness */}
-      <Container className="pb-16">
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((f) => (
-            <div key={f.title} className="rounded-lg border bg-card p-6 shadow-sm">
-              <div className="text-lg font-semibold">{f.title}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
-            </div>
-          ))}
-        </div>
-      </Container>
+      <TrainersSection />
+      <PerksSection />
+      <ArticlesSection />
+      <TestimonialsSection />
+      <FaqSection />
     </>
   );
 }
@@ -201,18 +199,3 @@ function LocationIcon() {
     </svg>
   );
 }
-
-const features = [
-  {
-    title: "Nationwide fixtures",
-    desc: "Coordinated leagues and friendlies spanning New South Wales, Victoria, and Western Australia.",
-  },
-  {
-    title: "Accredited coaching",
-    desc: "Experienced coaches supporting juniors, seniors, and masters squads with tailored programs.",
-  },
-  {
-    title: "Cultural connection",
-    desc: "Events honour Pakistani heritage with traditional food, music, and family activities.",
-  },
-];

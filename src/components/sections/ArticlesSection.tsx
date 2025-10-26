@@ -1,5 +1,6 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
+import type { Route } from "next";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import cricketLeague from "@/assets/photos/pixabay-163526.jpg";
@@ -11,8 +12,8 @@ type ArticleItem = {
   date: string;
   title: string;
   excerpt: string;
-  href: string;
-  image: { src: typeof cricketLeague };
+  href: Route;
+  image: StaticImageData;
 };
 
 const articles: ArticleItem[] = [
@@ -22,8 +23,8 @@ const articles: ArticleItem[] = [
     title: "How PSCA nurtures cricket pathways from juniors to national squads",
     excerpt:
       "Structured training blocks, selector visibility, and nationwide tournaments keep Pakistani-Australian cricketers progressing.",
-    href: "/articles/cricket-pathways",
-    image: { src: cricketLeague },
+    href: "/articles" as Route,
+    image: cricketLeague,
   },
   {
     tag: "Community",
@@ -31,8 +32,8 @@ const articles: ArticleItem[] = [
     title: "Inside our Friday futsal nights that bring the diaspora together",
     excerpt:
       "Weekly indoor games, post-match chai, and family-friendly programming make futsal the social heartbeat of PSCA.",
-    href: "/articles/futsal-nights",
-    image: { src: futsalNight },
+    href: "/articles" as Route,
+    image: futsalNight,
   },
   {
     tag: "Events",
@@ -40,8 +41,8 @@ const articles: ArticleItem[] = [
     title: "What to expect at the Pakistan community sports festival 2025",
     excerpt:
       "From legends panels to kids cricket clinics, see how we celebrate Pakistani culture alongside friendly competition.",
-    href: "/articles/community-festival-2025",
-    image: { src: communityFestival },
+    href: "/articles" as Route,
+    image: communityFestival,
   },
 ];
 
@@ -58,7 +59,7 @@ export function ArticlesSection() {
               connected across the country.
             </p>
           </div>
-          <Link href="/articles" className="mt-6 inline-flex items-center sm:mt-0">
+          <Link href={"/articles" as Route} className="mt-6 inline-flex items-center sm:mt-0">
             <Button variant="outline" className="rounded-full px-6">
               Browse all posts
             </Button>
@@ -69,11 +70,7 @@ export function ArticlesSection() {
           {articles.map((article) => (
             <article key={article.title} className="flex h-full flex-col">
               <div className="overflow-hidden rounded-[28px] border bg-card shadow-sm">
-                <Image
-                  src={article.image.src}
-                  alt={article.title}
-                  className="aspect-[4/5] w-full object-cover transition-transform duration-300 hover:scale-[1.02]"
-                />
+                <Image src={article.image} alt={article.title} className="aspect-[4/5] w-full object-cover transition-transform duration-300 hover:scale-[1.02]" />
               </div>
               <div className="mt-5 flex items-center gap-3 text-sm text-muted-foreground">
                 <span className="inline-flex items-center rounded-full bg-secondary-200 px-3 py-1 text-xs font-medium text-primary">
@@ -103,4 +100,3 @@ function ArrowIcon() {
     </svg>
   );
 }
-
