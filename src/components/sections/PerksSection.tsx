@@ -1,6 +1,4 @@
 import { Container } from "@/components/layout/Container";
-import { Button } from "@/components/ui/Button";
-
 type PerkItem = {
   title: string;
   description: string;
@@ -42,51 +40,30 @@ const perks: PerkItem[] = [
 
 export function PerksSection() {
   return (
-    <section className="bg-secondary-200/40 py-16 sm:py-20">
+    <section className="py-16 sm:py-20">
       <Container>
         <div className="text-center">
           <div className="text-xs uppercase tracking-[0.35em] text-primary">Benefits</div>
-          <h2 className="mt-3 text-4xl font-medium text-primary md:text-5xl">Why teams choose PSCA</h2>
+          <h2 className="mt-3 text-4xl font-medium text-neutral-800 md:text-5xl">Why teams choose PSCA</h2>
           <p className="mx-auto mt-3 max-w-2xl text-para-md text-muted-foreground">
             From grassroots to elite, Pakistan Sports Club Australia provides the structure, support, and family you need
             to compete at your best across the nation.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-4">
-          <div className="lg:col-span-3">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {perks.map((perk) => {
-                const Icon = perk.icon;
-                return (
-                  <div
-                    key={perk.title}
-                    className="flex h-full flex-col rounded-[28px] border border-secondary-300/60 bg-secondary-100/60 p-6 text-left shadow-sm"
-                  >
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-secondary-200 text-primary">
-                      <Icon />
-                    </span>
-                    <h3 className="mt-4 text-lg font-semibold text-neutral-800">{perk.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{perk.description}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          <aside className="flex h-full flex-col justify-between rounded-[28px] bg-primary text-primary-foreground p-8 shadow-lg">
-            <div>
-              <h3 className="text-2xl font-semibold">Join now and elevate your game</h3>
-              <p className="mt-3 text-sm text-primary-foreground/85">
-                Secure entry into national fixtures, priority access to facilities, and tailored support for your club or
-                family.
-              </p>
-            </div>
-            <Button variant="secondary" className="mt-6 rounded-full bg-white text-primary hover:bg-white/90">
-              Become a PSCA member
-            </Button>
-            <div className="mt-10 h-20 w-20 self-end rounded-full bg-secondary-200/60" />
-          </aside>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {perks.map((perk) => {
+            const Icon = perk.icon;
+            return (
+              <div key={perk.title} className="flex h-full flex-col rounded-[28px] p-6 text-left">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-secondary-200 text-primary">
+                  <Icon />
+                </span>
+                <h3 className="mt-4 text-lg font-semibold text-neutral-800">{perk.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{perk.description}</p>
+              </div>
+            );
+          })}
         </div>
       </Container>
     </section>
@@ -155,4 +132,3 @@ function InsightsIcon() {
     </svg>
   );
 }
-

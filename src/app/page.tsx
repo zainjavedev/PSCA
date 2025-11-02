@@ -74,7 +74,7 @@ export default function HomePage() {
         <Container>
           <div className="text-center">
             <div className="text-xs uppercase tracking-[0.35em] text-primary">Programs</div>
-            <h2 className="mt-3 font-sans text-4xl font-medium text-primary md:text-5xl">Signature PSCA programs</h2>
+            <h2 className="mt-3 font-sans text-4xl font-medium text-neutral-800 md:text-5xl">Signature PSCA programs</h2>
             <p className="mx-auto mt-3 max-w-2xl text-para-md text-muted-foreground">
               From premier cricket leagues to indoor futsal nights, Pakistan Sports Club Australia delivers organised
               competitions and events for every generation of our community.

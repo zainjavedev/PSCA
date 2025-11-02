@@ -53,7 +53,7 @@ export function ArticlesSection() {
         <div className="gap-6 sm:flex sm:items-center sm:justify-between">
           <div className="max-w-2xl">
             <div className="text-xs uppercase tracking-[0.35em] text-primary">Articles</div>
-            <h2 className="mt-3 text-4xl font-medium text-primary md:text-5xl">Articles & resources</h2>
+            <h2 className="mt-3 text-4xl font-medium text-neutral-800 md:text-5xl">Articles & resources</h2>
             <p className="mt-3 text-para-md text-muted-foreground">
               Discover stories, training tips, and event recaps that keep the Pakistan Sports Club Australia community
               connected across the country.

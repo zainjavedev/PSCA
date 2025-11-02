@@ -64,7 +64,7 @@ export function TrainersSection() {
         <div className="gap-6 sm:flex sm:items-center sm:justify-between">
           <div className="max-w-xl">
             <div className="text-xs uppercase tracking-[0.35em] text-primary">Trainers</div>
-            <h2 className="mt-3 text-4xl font-medium text-primary md:text-5xl">Meet our expert coaches</h2>
+            <h2 className="mt-3 text-4xl font-medium text-neutral-800 md:text-5xl">Meet our expert coaches</h2>
             <p className="mt-3 text-para-md text-muted-foreground">
               The Pakistan Sports Club Australia coaching panel brings decades of elite experience, guiding our players
               through cricket, futsal, and high-performance conditioning pathways.

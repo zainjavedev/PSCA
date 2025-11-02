@@ -41,7 +41,7 @@ export function TestimonialsSection() {
         <div className="gap-6 sm:flex sm:items-center sm:justify-between">
           <div>
             <div className="text-xs uppercase tracking-[0.35em] text-primary">Community</div>
-            <h2 className="mt-3 text-4xl font-medium text-primary md:text-5xl">What our members say</h2>
+            <h2 className="mt-3 text-4xl font-medium text-neutral-800 md:text-5xl">What our members say</h2>
             <p className="mt-3 max-w-2xl text-para-md text-muted-foreground">
               Hear from families and players who call Pakistan Sports Club Australia their sporting home.
             </p>
